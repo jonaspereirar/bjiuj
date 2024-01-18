@@ -7,11 +7,18 @@
 - [ ] O usuário pode fazer login na plataforma.
 - [ ] O usuário pode visualizar e editar seu perfil.
 - [ ] O usuário pode recuperar a senha da sua conta.
+- [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado.
+- [ ] Deve ser possível o usuário obter o seu histórico de check-ins.
+- [ ] Deve ser possível o usuário buscar academias próximas (até 10km).
+- [ ] Deve ser possível o usuário buscar academias pelo nome.
+- [ ] Deve ser possível o usuário realizar check-in em uma academia.
+- [ ] Deve ser possível validar o check-in de um usuário.
+- [ ] Deve ser possível cadastrar uma academia.
 
 ## Perfis
 - [ ] O usuário pode visualizar o perfil de outros usuários.
 - [ ] O usuário pode visualizar o perfil de professores de Jiu-Jitsu.
-- [ ] O usuário pode visualizar o perfil de academias de Jiu-Jitsu.
+- [ ] O usuário pode visualizar o perfil de academias.
 
 ## Conexões
 - [ ] O usuário pode seguir outros usuários.
@@ -46,6 +53,12 @@
 ## Restrições
 - [ ] Apenas usuários autenticados podem criar posts.
 - [ ] As academias só podem ser cadastradas por usuários autenticados como proprietários ou representantes legais.
+- [ ] O usuário não deve poder se cadastrar com um e-mail duplicado.
+- [ ] O usuário não pode fazer 2 check-ins no mesmo dia.
+- [ ] O usuário não pode fazer check-in se não estiver perto (100m) da academia.
+- [ ] O check-in só pode ser validado até 20 minutos após ser criado.
+- [ ] O check-in só pode ser validado por administradores(Professor ou Academia).
+- [ ] A academia só pode ser cadastrada por administradores/Professores;
 
 # RNF - Regras Não Funcionais
 
@@ -56,8 +69,10 @@
 ## Segurança e Autorização
 - [ ] Implementar HTTPS para garantir a segurança das comunicações.
 - [ ] Estabelecer lógica de autorização para garantir que apenas usuários autenticados acessem determinados recursos.
-- [ ] Todas as comunicações devem ser realizadas por meio de HTTPS.
+- [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL.
+- [ ]  Todas listas de dados precisam estar paginadas com 20 itens por página.
 - [ ] As senhas dos usuários devem ser armazenadas de forma segura, utilizando técnicas de hash e sal.
+- [ ] O usuário deve ser identificado por um JWT (JSON Web Token).
 
 ## Notificações
 - [ ] Integrar sistema de notificações para alertar usuários sobre novas mensagens, aulas agendadas, etc.

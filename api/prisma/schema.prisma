@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  created_at    DateTime @default(now())
+
+  checkIns    CheckIn[]
+  graduations Graduation[]
+
+  gym    Gym?    @relation(fields: [gym_Id], references: [id])
+  gym_Id String?
+
+  gamer   Game?   @relation(fields: [game_Id], references: [id])
+  game_Id String?
+
+  @@map("users")
+}
+
+model CheckIn {
+  id           String    @id @default(uuid())
+  created_at   DateTime  @default(now())
+  validated_at DateTime?
+
+  user    User   @relation(fields: [user_Id], references: [id])
+  user_Id String
+
+  gym    Gym    @relation(fields: [gym_Id], references: [id])
+  gym_Id String
+
+  trainer    Trainer @relation(fields: [trainer_Id], references: [id])
+  trainer_Id String
+
+  @@map("check_ins")
+}
+
+model Gym {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  phone       String?
+  location    String?
+  latitude    Decimal
+  longitude   Decimal
+  checkIns    CheckIn[]
+  users       User[]
+  trainers    Trainer[]
+
+  @@map("gyms")
+}
+
+model Trainer {
+  id          String  @id @default(uuid())
+  title       String
+  description String?
+  phone       String?
+  latitude    Decimal
+  longitude   Decimal
+
+  checkIns    CheckIn[]
+  graduations Graduation[]
+
+  game    Game?   @relation(fields: [game_Id], references: [id])
+  game_Id String?
+
+  gym    Gym?    @relation(fields: [gym_Id], references: [id])
+  gym_Id String?
+
+  @@map("trainers")
+}
+
+model Graduation {
+  id    String @id @default(uuid())
+  title String
+
+  user    User?   @relation(fields: [user_Id], references: [id])
+  user_Id String?
+
+  trainer    Trainer? @relation(fields: [trainer_Id], references: [id])
+  trainer_Id String?
+
+  @@map("graduations")
+}
+
+model Game {
+  id         String    @id @default(uuid())
+  title      String
+  descrption String?
+  users      User[]
+  trainers   Trainer[]
+
+  @@map("gamers")
+}
