@@ -3,7 +3,7 @@
 # RF - Regras Funcionais
 
 ## Autenticação e Conta do Usuário
-- [ ] O usuário pode se registrar na plataforma.
+- [x] O usuário pode se registrar na plataforma.
 - [ ] O usuário pode fazer login na plataforma.
 - [ ] O usuário pode visualizar e editar seu perfil.
 - [ ] O usuário pode recuperar a senha da sua conta.
@@ -53,7 +53,7 @@
 ## Restrições
 - [ ] Apenas usuários autenticados podem criar posts.
 - [ ] As academias só podem ser cadastradas por usuários autenticados como proprietários ou representantes legais.
-- [ ] O usuário não deve poder se cadastrar com um e-mail duplicado.
+- [x] O usuário não deve poder se cadastrar com um e-mail duplicado.
 - [ ] O usuário não pode fazer 2 check-ins no mesmo dia.
 - [ ] O usuário não pode fazer check-in se não estiver perto (100m) da academia.
 - [ ] O check-in só pode ser validado até 20 minutos após ser criado.
@@ -71,8 +71,8 @@
 - [ ] Estabelecer lógica de autorização para garantir que apenas usuários autenticados acessem determinados recursos.
 - [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL.
 - [ ]  Todas listas de dados precisam estar paginadas com 20 itens por página.
-- [ ] As senhas dos usuários devem ser armazenadas de forma segura, utilizando técnicas de hash e sal.
-- [ ] O usuário deve ser identificado por um JWT (JSON Web Token).
+- [x] As senhas dos usuários devem ser armazenadas de forma segura, utilizando técnicas de hash e sal.
+- [x] O usuário deve ser identificado por um JWT (JSON Web Token).
 
 ## Notificações
 - [ ] Integrar sistema de notificações para alertar usuários sobre novas mensagens, aulas agendadas, etc.
