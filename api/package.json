@@ -10,7 +10,8 @@
     "knex": "node --no-warnings --loader tsx ./node_modules/.bin/knex",
     "lint": "eslint src --ext .ts --fix",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@rocketseat/eslint-config": "2.1.0",
     "@types/bcryptjs": "2.4.6",
     "@types/node": "18.19.8",
+    "@vitest/coverage-v8": "1.2.1",
     "eslint": "8.56.0",
     "prisma": "5.8.1",
     "tsup": "6.7.0",
