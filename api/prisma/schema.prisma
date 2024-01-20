@@ -17,11 +17,11 @@ model User {
   checkIns    CheckIn[]
   graduations Graduation[]
 
-  gym    Gym?    @relation(fields: [gym_Id], references: [id])
-  gym_Id String?
+  gym    Gym?    @relation(fields: [gym_id], references: [id])
+  gym_id String?
 
-  gamer   Game?   @relation(fields: [game_Id], references: [id])
-  game_Id String?
+  gamer   Game?   @relation(fields: [game_id], references: [id])
+  game_id String?
 
   @@map("users")
 }
@@ -31,14 +31,14 @@ model CheckIn {
   created_at   DateTime  @default(now())
   validated_at DateTime?
 
-  user    User   @relation(fields: [user_Id], references: [id])
-  user_Id String
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
 
-  gym    Gym    @relation(fields: [gym_Id], references: [id])
-  gym_Id String
+  gym    Gym?    @relation(fields: [gym_id], references: [id])
+  gym_id String?
 
-  trainer    Trainer @relation(fields: [trainer_Id], references: [id])
-  trainer_Id String
+  trainer    Trainer? @relation(fields: [trainer_id], references: [id])
+  trainer_id String?
 
   @@map("check_ins")
 }
@@ -69,11 +69,11 @@ model Trainer {
   checkIns    CheckIn[]
   graduations Graduation[]
 
-  game    Game?   @relation(fields: [game_Id], references: [id])
-  game_Id String?
+  game    Game?   @relation(fields: [game_id], references: [id])
+  game_id String?
 
-  gym    Gym?    @relation(fields: [gym_Id], references: [id])
-  gym_Id String?
+  gym    Gym?    @relation(fields: [gym_id], references: [id])
+  gym_id String?
 
   @@map("trainers")
 }
@@ -82,11 +82,11 @@ model Graduation {
   id    String @id @default(uuid())
   title String
 
-  user    User?   @relation(fields: [user_Id], references: [id])
-  user_Id String?
+  user    User?   @relation(fields: [user_id], references: [id])
+  user_id String?
 
-  trainer    Trainer? @relation(fields: [trainer_Id], references: [id])
-  trainer_Id String?
+  trainer    Trainer? @relation(fields: [trainer_id], references: [id])
+  trainer_id String?
 
   @@map("graduations")
 }
