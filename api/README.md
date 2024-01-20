@@ -10,7 +10,7 @@
 - [ ] O usuário pode recuperar a senha da sua conta.
 - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado.
 - [ ] Deve ser possível o usuário obter o seu histórico de check-ins.
-- [ ] Deve ser possível o usuário buscar academias próximas (até 80km).
+- [ ] Deve ser possível o usuário buscar academias próximas (até 100km).
 - [ ] Deve ser possível o usuário buscar academias pelo nome.
 - [x] Deve ser possível o usuário realizar check-in em uma academia/treinador.
 - [x] Deve ser possível validar o check-in de um usuário.
@@ -56,7 +56,7 @@
 - [ ] As academias só podem ser cadastradas por usuários autenticados como proprietários ou representantes legais.
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado.
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia.
-- [ ] O usuário não pode fazer check-in se não estiver perto (100m) da academia.
+- [x] O usuário não pode fazer check-in se não estiver perto (100m) da academia.
 - [ ] O check-in só pode ser validado até 20 minutos após ser criado.
 - [ ] O check-in só pode ser validado por administradores(Professor ou Academia).
 - [ ] A academia só pode ser cadastrada por administradores/Professores;
