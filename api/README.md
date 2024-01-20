@@ -5,7 +5,7 @@
 ## Autenticação e Conta do Usuário
 - [x] O usuário pode se registrar na plataforma.
 - [x] O usuário pode fazer login na plataforma.
-- [ ] O usuário pode visualizar e editar seu perfil.
+- [x] O usuário pode visualizar e editar seu perfil.
 - [ ] O usuário pode recuperar a senha da sua conta.
 - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado.
 - [ ] Deve ser possível o usuário obter o seu histórico de check-ins.
