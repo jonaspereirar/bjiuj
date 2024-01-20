@@ -1,14 +1,28 @@
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
+import { InMemorygymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { CheckInUseCase } from '@/use-cases/check-in'
+import { Decimal } from '@prisma/client/runtime/library'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 let checkInsRepository: InMemoryCheckInsRepository
+let gymsRepository: InMemorygymsRepository
 let sut: CheckInUseCase
 
 describe('Check-in Use Case', () => {
   beforeEach(() => {
     checkInsRepository = new InMemoryCheckInsRepository()
-    sut = new CheckInUseCase(checkInsRepository)
+    gymsRepository = new InMemorygymsRepository()
+    sut = new CheckInUseCase(checkInsRepository, gymsRepository)
+
+    gymsRepository.items.push({
+      id: 'gym-01',
+      title: 'cva',
+      description: '',
+      phone: '',
+      latitude: new Decimal(0),
+      longitude: new Decimal(0),
+      location: '',
+    })
 
     vi.useFakeTimers()
   })
@@ -22,6 +36,8 @@ describe('Check-in Use Case', () => {
       gymId: 'gym-01',
       userId: 'user-01',
       trainerId: '',
+      userLattude: 37.7121308,
+      userLongitude: -8.0792683,
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
@@ -34,6 +50,8 @@ describe('Check-in Use Case', () => {
       gymId: 'gym-01',
       userId: 'user-01',
       trainerId: '',
+      userLattude: 37.7121308,
+      userLongitude: -8.0792683,
     })
 
     await expect(() =>
@@ -41,6 +59,8 @@ describe('Check-in Use Case', () => {
         gymId: 'gym-01',
         userId: 'user-01',
         trainerId: '',
+        userLattude: 37.7121308,
+        userLongitude: -8.0792683,
       }),
     ).rejects.toBeInstanceOf(Error)
   })
@@ -52,6 +72,8 @@ describe('Check-in Use Case', () => {
       gymId: 'gym-01',
       userId: 'user-01',
       trainerId: '',
+      userLattude: 37.7121308,
+      userLongitude: -8.0792683,
     })
 
     vi.setSystemTime(new Date(2022, 0, 21, 8, 0, 0))
@@ -60,6 +82,8 @@ describe('Check-in Use Case', () => {
       gymId: 'gym-01',
       userId: 'user-01',
       trainerId: '',
+      userLattude: 37.7121308,
+      userLongitude: -8.0792683,
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
