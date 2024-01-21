@@ -8,7 +8,7 @@
 - [x] O usuário pode visualizar e editar seu perfil.
 - [x] Deve ser possível obter o perfil de um usuário logado.
 - [ ] O usuário pode recuperar a senha da sua conta.
-- [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado.
+- [x] Deve ser possível obter o número de check-ins realizados pelo usuário logado.
 - [x] Deve ser possível o usuário obter o seu histórico de check-ins.
 - [ ] Deve ser possível o usuário buscar academias próximas (até 100km).
 - [ ] Deve ser possível o usuário buscar academias pelo nome.
@@ -94,7 +94,7 @@
 - [x] Users can view and edit their profiles.
 - [x] It should be possible to obtain the profile of a logged-in user.
 - [ ] Users can recover the password for their account.
-- [ ] It should be possible to obtain the number of check-ins performed by the logged-in user.
+- [x] It should be possible to obtain the number of check-ins performed by the logged-in user.
 - [x] Users can view their check-in history.
 - [ ] Users can search for nearby gyms (up to 100km).
 - [ ] Users can search for gyms by name.
