@@ -57,7 +57,7 @@
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado.
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia.
 - [x] O usuário não pode fazer check-in se não estiver perto (100m) da academia.
-- [ ] O check-in só pode ser validado até 20 minutos após ser criado.
+- [x] O check-in só pode ser validado até 20 minutos após ser criado.
 - [ ] O check-in só pode ser validado por administradores(Professor ou Academia).
 - [ ] A academia só pode ser cadastrada por administradores/Professores;
 
@@ -142,7 +142,7 @@
 - [x] Users should not be able to register with a duplicate email.
 - [x] Users cannot check in twice on the same day.
 - [x] Users cannot check in if they are not close (100m) to the gym.
-- [ ] Check-in can only be validated up to 20 minutes after it is created.
+- [x] Check-in can only be validated up to 20 minutes after it is created.
 - [ ] Check-in can only be validated by administrators (Teacher or Gym).
 - [ ] Gyms can only be registered by administrators/Teachers.
 

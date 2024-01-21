@@ -1,6 +1,6 @@
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { ResourceNotFoundError } from '@/use-cases/erros/resource-not-found-error'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { ValidateCheckInUseCase } from './validate-check-in'
 
 let checkInsRepository: InMemoryCheckInsRepository
@@ -11,11 +11,11 @@ describe('Validate Check-in Use Case', () => {
     checkInsRepository = new InMemoryCheckInsRepository()
     sut = new ValidateCheckInUseCase(checkInsRepository)
 
-    // vi.useFakeTimers()
+    vi.useFakeTimers()
   })
 
   afterEach(() => {
-    // vi.useRealTimers()
+    vi.useRealTimers()
   })
 
   it('should be able to validate the check-in', async () => {
@@ -52,5 +52,43 @@ describe('Validate Check-in Use Case', () => {
 
     expect(checkIn.validated_at).toEqual(expect.any(Date))
     expect(checkInsRepository.items[0].validated_at).toEqual(expect.any(Date))
+  })
+
+  it('You should not be able to validate the check-in after 20 minutes of creating it with the gym', async () => {
+    vi.setSystemTime(new Date(2023, 0, 1, 13, 40))
+
+    const createdCheckIn = await checkInsRepository.create({
+      gym_id: 'gym-01',
+      user_id: 'user-01',
+    })
+
+    const twentyOneMinutesInMs = 1000 * 60 * 21
+
+    vi.advanceTimersByTime(twentyOneMinutesInMs)
+
+    await expect(() =>
+      sut.execute({
+        checkInId: createdCheckIn.id,
+      }),
+    ).rejects.toBeInstanceOf(Error)
+  })
+
+  it('You should not be able to validate the check-in after 20 minutes of creating it with the trainer', async () => {
+    vi.setSystemTime(new Date(2023, 0, 1, 13, 40))
+
+    const createdCheckIn = await checkInsRepository.create({
+      gym_id: 'trainer-01',
+      user_id: 'user-01',
+    })
+
+    const twentyOneMinutesInMs = 1000 * 60 * 21
+
+    vi.advanceTimersByTime(twentyOneMinutesInMs)
+
+    await expect(() =>
+      sut.execute({
+        checkInId: createdCheckIn.id,
+      }),
+    ).rejects.toBeInstanceOf(Error)
   })
 })
