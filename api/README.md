@@ -14,7 +14,7 @@
 - [ ] Deve ser possível o usuário buscar academias pelo nome.
 - [x] Deve ser possível o usuário realizar check-in em uma academia/treinador.
 - [x] Deve ser possível validar o check-in de um usuário.
-- [ ] Deve ser possível cadastrar uma academia.
+- [x] Deve ser possível cadastrar uma academia.
 
 ## Perfis
 - [ ] O usuário pode visualizar o perfil de outros usuários.
