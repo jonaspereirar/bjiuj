@@ -11,7 +11,7 @@
 - [x] Deve ser possível obter o número de check-ins realizados pelo usuário logado.
 - [x] Deve ser possível o usuário obter o seu histórico de check-ins.
 - [ ] Deve ser possível o usuário buscar academias próximas (até 100km).
-- [ ] Deve ser possível o usuário buscar academias pelo nome.
+- [x] Deve ser possível o usuário buscar academias pelo nome.
 - [x] Deve ser possível o usuário realizar check-in em uma academia/treinador.
 - [x] Deve ser possível validar o check-in de um usuário.
 - [x] Deve ser possível cadastrar uma academia/Trainador.
@@ -97,7 +97,7 @@
 - [x] It should be possible to obtain the number of check-ins performed by the logged-in user.
 - [x] Users can view their check-in history.
 - [ ] Users can search for nearby gyms (up to 100km).
-- [ ] Users can search for gyms by name.
+- [x] Users can search for gyms by name.
 - [x] Users can check in at a gym/trainer.
 - [x] It should be possible to validate the check-in of a user.
 - [x] It should be possible to register a gym/Trainer.
