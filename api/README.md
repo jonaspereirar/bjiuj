@@ -69,8 +69,8 @@
 
 ## Segurança e Autorização
 - [ ] Implementar HTTPS para garantir a segurança das comunicações.
-- [ ] Estabelecer lógica de autorização para garantir que apenas usuários autenticados acessem determinados recursos.
-- [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL.
+- [x] Estabelecer lógica de autorização para garantir que apenas usuários autenticados acessem determinados recursos.
+- [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL.
 - [x]  Todas listas de dados precisam estar paginadas com 20 itens por página.
 - [x] As senhas dos usuários devem ser armazenadas de forma segura, utilizando técnicas de hash e sal.
 - [x] O usuário deve ser identificado por um JWT (JSON Web Token).
@@ -79,10 +79,10 @@
 - [ ] Integrar sistema de notificações para alertar usuários sobre novas mensagens, aulas agendadas, etc.
 
 ## Documentação
-- [ ] Criar documentação detalhada da API, incluindo endpoints, parâmetros, e exemplos de uso.
+- [x] Criar documentação detalhada da API, incluindo endpoints, parâmetros, e exemplos de uso.
 
 ## Escalabilidade
-- [ ] A arquitetura da API deve ser escalável para lidar com o crescimento futuro do número de usuários e conteúdos.
+- [x] A arquitetura da API deve ser escalável para lidar com o crescimento futuro do número de usuários e conteúdos.
 
 🌟🥋#bjiuj #JiuJitsuRevolution #TreinePersonalizado #ComunidadeBJJ #AprendaJunto🚀🤙
 
@@ -137,8 +137,8 @@
 - [ ] Teachers can post tips on techniques and strategies.
 
 ## Restrictions
-- [ ] Only authenticated users can create posts.
-- [ ] Gyms can only be registered by authenticated users as owners or legal representatives.
+- [x] Only authenticated users can create posts.
+- [x] Gyms can only be registered by authenticated users as owners or legal representatives.
 - [x] Users should not be able to register with a duplicate email.
 - [x] Users cannot check in twice on the same day.
 - [x] Users cannot check in if they are not close (100m) to the gym.
@@ -154,8 +154,8 @@
 
 ## Security and Authorization
 - [ ] Implement HTTPS to ensure the security of communications.
-- [ ] Establish authorization logic to ensure that only authenticated users access certain resources.
-- [ ] Application data needs to be persisted in a PostgreSQL database.
+- [x] Establish authorization logic to ensure that only authenticated users access certain resources.
+- [x] Application data needs to be persisted in a PostgreSQL database.
 - [x] All data lists need to be paginated with 20 items per page.
 - [x] User passwords must be stored securely using hash and salt techniques.
 - [x] The user must be identified by a JWT (JSON Web Token).
@@ -164,9 +164,9 @@
 - [ ] Integrate a notification system to alert users about new messages, scheduled lessons, etc.
 
 ## Documentation
-- [ ] Create detailed documentation of the API, including endpoints, parameters, and usage examples.
+- [x] Create detailed documentation of the API, including endpoints, parameters, and usage examples.
 
 ## Scalability
-- [ ] The architecture of the API must be scalable to handle the future growth of the number of users and content.
+- [x] The architecture of the API must be scalable to handle the future growth of the number of users and content.
 
 🌟🥋#bjiuj #JiuJitsuRevolution #PersonalizedTraining #BJJCommunity #LearnTogether 🚀🤙
