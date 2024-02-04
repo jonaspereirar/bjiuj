@@ -8,8 +8,8 @@ import { search } from './search'
 export async function trainersRoutes(app: FastifyInstance) {
   app.addHook('onRequest', verifyJwt)
 
-  app.get('/gyms/search', search)
-  app.get('/gyms/nearby', nearby)
+  app.get('/trainers/search', search)
+  app.get('/trainers/nearby', nearby)
 
-  app.post('/gyms', create)
+  app.post('/trainers', create)
 }

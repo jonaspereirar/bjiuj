@@ -1,11 +1,11 @@
-import { env } from '@/env'
 import fastifyJwt from '@fastify/jwt'
 import fastify from 'fastify'
 import { ZodError } from 'zod'
+import { env } from './env'
 
-import { usersRoutes } from '@/http/controllers/users/routes'
 import { gymsRoutes } from './http/controllers/gyms/routes'
 import { trainersRoutes } from './http/controllers/trainers/routes'
+import { usersRoutes } from './http/controllers/users/routes'
 
 export const app = fastify()
 
